@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表情包</title>
+  <link rel="shortcut icon" href="/images/web.ico" type="image/x-icon">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <style>*{margin:0;padding:0}body{font:14px/1.5 Arial,Microsoft Yahei,sans-serif;color:#636b6f}img{border:0}a,a:focus,a:visited,a:link,a:hover,a:active{text-decoration:none}.container-fluid.main{padding:0}a{color: #636b6f;}.card{margin:10px;height:8rem;}.card span{float: right;color:#999;}
+  img {width: 250px;}
+  .container {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .img-wrapper{
+    column-count: 4;
+    column-gap: 240px;
+    counter-reset: count;
+    width: 80vw;
+    margin: 0 0;
+    list-style-type: none;
+  }
+  .img-wrapper>div>li{
+    position: relative;
+    margin-bottom: 20px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <ul class="img-wrapper">
+    <div class="web-list">
+    </div>
+  </ul>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/sticker.load.js"></script>
+  <script src="js/web.load.js"></script>
+</body>
+</html>
