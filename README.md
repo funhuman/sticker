@@ -2,7 +2,7 @@
 
 表情包网站。
 
-[点我前往](https://funhuman.github.io/)
+[点我前往](https://funhuman.github.io/sticker/)
 
 ## 计划
 
