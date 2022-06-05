@@ -7,36 +7,47 @@
   <title>表情包</title>
   <link rel="shortcut icon" href="/images/web.ico" type="image/x-icon">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <style>*{margin:0;padding:0}body{font:14px/1.5 Arial,Microsoft Yahei,sans-serif;color:#636b6f}img{border:0}a,a:focus,a:visited,a:link,a:hover,a:active{text-decoration:none}.container-fluid.main{padding:0}a{color: #636b6f;}.card{margin:10px;height:8rem;}.card span{float: right;color:#999;}
-  img {width: 250px;}
-  .container {
-    margin: 0 auto;
-    text-align: center;
-  }
-  .img-wrapper{
-    column-count: 4;
-    column-gap: 240px;
-    counter-reset: count;
-    width: 80vw;
-    margin: 0 0;
-    list-style-type: none;
-  }
-  .img-wrapper>div>li{
-    position: relative;
-    margin-bottom: 20px;
-  }
+  <style>*{margin:0;padding:0}body{font:14px/1.5 Arial,Microsoft Yahei,sans-serif;color:#636b6f}img{border:0}a,a:focus,a:visited,a:link,a:hover,a:active{text-decoration:none}img{width:250px}.container,.input-group{margin:10px auto;text-align:center}.img-wrapper{column-count:4;column-gap:240px;counter-reset:count;width:80vw;list-style-type:none}.img-wrapper>div>li{position:relative;margin-bottom:20px}.input-group{width:80%}
   </style>
 </head>
 <body>
   <div class="container">
-  <ul class="img-wrapper">
-    <div class="web-list">
+    <div class="input-group mb-3">
+      <input type="text" id="ipt" class="form-control" placeholder="输入要模糊搜索的关键词" aria-label="Recipient's username" aria-describedby="search" onkeydown="KeyDown()">
+      <button class="btn btn-outline-success" type="button"  id="search" onclick="search()">搜索</button>
+      </div>
     </div>
-  </ul>
+    <div class="img-box">
+      <ul class="img-wrapper">
+        <div class="web-list">
+        </div>
+      </ul>
+    </div>
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/jquery.slim.min.js"></script>
   <script src="js/sticker.load.js"></script>
   <script src="js/web.load.js"></script>
+  <script>
+    function KeyDown() {
+        if (event.keyCode == 13) {
+            search();
+        }
+    }
+    function search() {
+      web_list_html='';
+      let search_text = document.getElementById("ipt").value
+      sticker_list.forEach(function (t) {
+        if (t.title.match(search_text)) {
+          web_list_html += `<li><image src="${t.href}" /></li>`
+        }
+      });
+      if (web_list_html == '') {
+        $(".img-box").html('<div class="alert alert-light"><strong>提示!</strong> 没有查询到对应的结果</p></div>');
+      } else {
+        $(".web-list").html(web_list_html);
+      }
+    }
+  </script>
 </body>
 </html>
