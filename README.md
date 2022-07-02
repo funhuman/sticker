@@ -1,6 +1,6 @@
-## Sticker
+# Sticker
 
-表情包网站。
+表情包。
 
 [点我前往](https://funhuman.github.io/sticker/)
 
@@ -10,3 +10,4 @@
 - [ ] 查看大图
 - [x] 根据图片标题查找
     - [ ] 高级查询
+- [ ] 分类
