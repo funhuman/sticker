@@ -26,8 +26,11 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/jquery.slim.min.js"></script>
   <script src="js/sticker.load.js"></script>
-  <script src="js/web.load.js"></script>
   <script>
+    window.onload = function () {
+        search();
+        console.log("GitHub: https://github.com/funhuman/sticker")
+    }
     function KeyDown() {
         if (event.keyCode == 13) {
             search();
